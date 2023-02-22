@@ -20,14 +20,7 @@ let data = {
     ],
   },
 };
-
-// 2) How will you get the output [Advanced - uses 2D matrix
-// concept]
-// a) level-2
-// b) 72.8621
-
-
-// const x = data.Sophia.study[1].secondary[1].location
-// console.log(x);
+const x = data.Sophia.study[1].secondary[1].location
+console.log(x);
 
 
