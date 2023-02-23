@@ -33,7 +33,7 @@ let data = [
 ];
 
 const x = data[3].pHeroCourses[0]
-const b = x.['course-xyz']
+// const b = x.['course-xyz']
 // const
 // ['course-xyz'] = x;
 console.log(x);
