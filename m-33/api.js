@@ -30,11 +30,5 @@ function getPost(json) {
   </div>`
     
     parent.appendChild(div)
-
-    
-    
-
-    
-
   }
 };
