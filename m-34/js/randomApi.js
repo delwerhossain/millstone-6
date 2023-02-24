@@ -30,20 +30,49 @@ function randomCard(data) {
   document.getElementById("first").innerText = firstN;
   document.getElementById("last").innerText = lastN;
   document.getElementById("email").innerText = email;
-
-  //   document.getElementById("test-card").innerText = picture;
-
-  //   const parent = document.getElementById("profile-card");
-  //   const div = document.createElement("div");
-  //   div.innerHTML = `
-  //     <div class="card-body">
-  //     <div class="avatar">
-  //               <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-  //                 <img id="card-img" src="${picture}" />
-  //               </div>
-  //             </div>
-  //       <h2 id="card-name" class="card-title">${title} ${firstN} ${lastN}</h2>
-  //   </div>`;
-
-  //   parent.appendChild(div);
 }
+
+////////////////////////////////////////////////////////////////
+// Food Api
+////////////////////////////////////////////////////////////////
+
+//
+
+document.getElementById("loader").addEventListener("click", () => {
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=fish`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((datas) => getData(datas.meals));
+});
+
+const getData = (datas) => {
+  // console.log(datas);
+
+  const parent = document.getElementById("list");
+  list.innerHTML = "";
+  datas.forEach(data => {
+    // console.log(data);
+
+    const foodName = data.strMeal
+    const img = data.strMealThumb
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <div class="card w-96 bg-base-100 shadow-xl">
+      <figure><img src="${img}" alt="Shoes" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">
+        ${foodName}
+          <div class="badge badge-secondary">NEW</div>
+        </h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div class="card-actions justify-end">
+          <div class="badge badge-outline">Fashion</div> 
+          <div class="badge() badge-outline">Products</div>
+
+        </div>
+      </div>
+    </div>
+      `;
+    parent.appendChild(div);
+  })
+};

@@ -45,7 +45,7 @@
         </div>
         <div class="navbar-center">
             <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
-            <button id="loader" class="btn btn-ghost btn-circle">
+            <button class="btn btn-ghost btn-circle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-5 w-5"
@@ -85,67 +85,13 @@
         </div>
       </div>
     </header>
-    <main class="container">
-      <section>
-        <div id="post" class="justify-center grid gap-8">
-          <!-- post part -->
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h1 class="px-4 py-2 text-xl font-medium border rounded-lg">
-                random Quote
-              </h1>
-              <div class="card-actions justify-end">
-                <button id="btn-refrash" class="btn btn-primary">refrash</button>
-              </div>
-  
-              <h2 id="random" class="card-title"></h2>
-            </div>
-          </div>
-  
-          <!-- post part -->
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h1 class="px-4 py-2 text-xl font-medium border rounded-lg">
-                Random Card
-              </h1>
-              <div class="card-actions justify-end">
-                <button id="btn-card-refrash" class="btn btn-primary">
-                  refrash
-                </button>
-              </div>
-              <div id="profile-card ">
-                <div class="card-body ">
-                  <div class="avatar justify-center ">
-                    <div
-                      class="bg-slate-500 w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                    >
-                      <img id="card-img" src="" />
-                    </div>
-                  </div>
-                  <div class="justify-center">
-                    <h2 id="card-name" class="card-title text-left">
-                      <span id="title"></span>
-                      <span id="first"></span>
-                      <span id="last"></span>
-                    </h2>
-                    <h3 id="email"></h3>
-                  </div>
-                </div>
-              </div>
-              <!-- profile card -->
-            </div>
-          </div>
+    <main class="container mx-auto">
+        <div id="list" class=" mx-4 bg-base-300 border rounded-xl">
+            <button class="bg-slate-500 px-4 py-4 text-yellow-50 font-semibold" id="loader">test</button>
         </div>
-      </section>
-     
-      <section class="container ">
-        <div id="list" class=" mx-auto bg-base-300 border rounded-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- <button class="bg-slate-500 px-4 py-4 text-yellow-50 font-semibold" id="test">test</button> -->
-      </div>
-      </section>
       
     </main>
     <!-- js script -->
-    <script src="./js/randomApi.js"></script>
+    <script src="./js/foodApi.js"></script>
   </body>
 </html>
