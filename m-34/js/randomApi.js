@@ -38,8 +38,11 @@ function randomCard(data) {
 
 //
 
-document.getElementById("loader").addEventListener("click", () => {
-  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=fish`;
+document.getElementById("loader").addEventListener("keyup", () => {
+  const search = document.getElementById("loader").value; 
+  const defult = 'fish'; 
+  const match = search || defult;
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${match}`;
   fetch(url)
     .then((response) => response.json())
     .then((datas) => getData(datas.meals));
@@ -53,18 +56,17 @@ const getData = (datas) => {
   datas.forEach(data => {
     // console.log(data);
 
-    const foodName = data.strMeal
-    const img = data.strMealThumb
+    const { idMeal, strMeal, strMealThumb, strInstructions } = data
     const div = document.createElement("div");
     div.innerHTML = `
     <div class="card w-96 bg-base-100 shadow-2xl">
-    <figure><img src="${img}" alt="Shoes" /></figure>
+    <figure><img src="${strMealThumb}" alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="card-title">
-      ${foodName}
+      ${strMeal}
         <div class="badge badge-secondary">NEW</div>
       </h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <p>${strInstructions.slice(0,128)}....</p>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">Fashion</div> 
         <div class="badge() badge-outline">Products</div>
@@ -74,4 +76,5 @@ const getData = (datas) => {
   </div>`;
     parent.appendChild(div);
   })
+
 };
