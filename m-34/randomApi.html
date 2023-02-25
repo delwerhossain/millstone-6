@@ -44,23 +44,27 @@
           </div>
         </div>
         <div class="navbar-center">
-            <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
-            <button id="loader" class="btn btn-ghost btn-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </button>
+          <input
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered input-primary w-full max-w-xs"
+          />
+          <button class="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
         </div>
         <div class="navbar-end">
           <button class="btn btn-ghost btn-circle">
@@ -95,13 +99,15 @@
                 random Quote
               </h1>
               <div class="card-actions justify-end">
-                <button id="btn-refrash" class="btn btn-primary">refrash</button>
+                <button id="btn-refrash" class="btn btn-primary">
+                  refrash
+                </button>
               </div>
-  
+
               <h2 id="random" class="card-title"></h2>
             </div>
           </div>
-  
+
           <!-- post part -->
           <div class="card w-96 bg-base-100 shadow-xl">
             <div class="card-body">
@@ -114,8 +120,8 @@
                 </button>
               </div>
               <div id="profile-card ">
-                <div class="card-body ">
-                  <div class="avatar justify-center ">
+                <div class="card-body">
+                  <div class="avatar justify-center">
                     <div
                       class="bg-slate-500 w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
                     >
@@ -135,15 +141,29 @@
               <!-- profile card -->
             </div>
           </div>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h1 class="px-4 py-2 text-xl font-medium border rounded-lg">
+                Food Meal
+              </h1>
+              <div class="card-actions justify-end">
+                <button  id="loader" class="btn btn-primary">post</button>
+              </div>
+
+              <h2 id="random" class="card-title"></h2>
+            </div>
+          </div>
         </div>
       </section>
-     
-      <section class="container ">
-        <div id="list" class=" mx-auto bg-base-300 border rounded-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <section class="mt-8">
+        <div
+          id="list"
+          class="justify-center grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           <!-- <button class="bg-slate-500 px-4 py-4 text-yellow-50 font-semibold" id="test">test</button> -->
-      </div>
+        </div>
       </section>
-      
     </main>
     <!-- js script -->
     <script src="./js/randomApi.js"></script>
