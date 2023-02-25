@@ -56,7 +56,8 @@ const modalView = (idMeal) => {
 
 const getModalData = (data) => {
   const { strMeal, strInstructions, strMealThumb } = data[0];
-  console.log(strMeal);
+  // console.log(strMeal);
+  const defultImg = 'https://www.themealdb.com/images/media/meals/ysxwuq1487323065.jpg';
   const parent = document.getElementById("modal-preview");
   parent.innerHTML = ``;
   const div = document.createElement("div");
@@ -66,7 +67,7 @@ const getModalData = (data) => {
       <p class="py-4">${strInstructions.slice(0, 128)}....} </p>
       <div class="avatar">
   <div class="w-24 rounded-full">
-    <img src="${strMealThumb ? strMealThumb :}" />
+    <img src="${strMealThumb ? strMealThumb : defultImg}" />
   </div>
       `;
   parent.appendChild(div);
