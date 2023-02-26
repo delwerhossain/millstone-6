@@ -1,13 +1,36 @@
-// api main function
-const mainProsscer = (search) => {
+
+const mainProsscer = async(search) => {
   const defult = "fish";
   const match = search || defult;
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${match}`;
-  fetch(url)
-    .then((response) => response.json())
-    .then((datas) => getData(datas.meals));
+
+  try {
+    const res = await fetch(url);
+    const datas = await res.json();
+    getData(datas.meals); 
+    // const res = await fetch(url);
+    // const data = await res.json();
+  } catch (error) {
+    console.log("hello", error); 
+  }
+  // fetch(url)
+  //   .then((response) => response.json())
+  //   .then((datas) => getData(datas.meals));
 };
 mainProsscer();
+
+
+const notFound = (data) => {
+
+  // console.log(data.length);
+  if (data.length == 9) {
+    document.getElementById('not-found').classList.add('hidden');
+  }
+  else {
+    document.getElementById('not-found').classList.remove('hidden');
+  }  
+}
+
 
 // search function
 document.getElementById("loader").addEventListener("keyup", () => {
@@ -18,6 +41,7 @@ document.getElementById("loader").addEventListener("keyup", () => {
 
 const getData = (datas) => {
   // console.log(datas);
+  notFound(datas);
 
   const parent = document.getElementById("list");
   list.innerHTML = "";

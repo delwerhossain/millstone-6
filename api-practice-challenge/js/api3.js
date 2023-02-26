@@ -10,14 +10,20 @@ const funcFetch = async (url) => {
   }
 };
 
+const notFound = (data) => {
+  if (data.length === 0) {
+    document.getElementById('not-found').classList.remove('hidden');
+  }
+  else {
+    document.getElementById('not-found').classList.add('hidden');
+  }  
+}
 const loader = (call) => {
   if (call) {
     document.getElementById('loader').classList.remove('hidden');
-    document.getElementById('body').style.background='red';
   }
   else {
     document.getElementById('loader').classList.add('hidden');
-    document.getElementById('body').style.background='white';
   }
 
   
@@ -29,30 +35,36 @@ document.getElementById("africa").addEventListener("click", function () {
   loader(true);
   url = "https://restcountries.com/v3.1/region/africa";
   funcFetch(url);
-  loader(false);
 });
 
 document.getElementById("americas").addEventListener("click", function () {
+  loader(true);
   url = "https://restcountries.com/v3.1/region/americas";
   funcFetch(url);
+
 });
 
 document.getElementById("asia").addEventListener("click", function () {
+  loader(true);
   url = "https://restcountries.com/v3.1/region/asia";
   funcFetch(url);
 });
 
 document.getElementById("europe").addEventListener("click", function () {
+  loader(true);
   url = "https://restcountries.com/v3.1/region/europe";
   funcFetch(url);
 });
 
 document.getElementById("oceania").addEventListener("click", function () {
+  loader(true);
   url = "https://restcountries.com/v3.1/region/oceania";
   funcFetch(url);
 });
 
 const getdata = (datas) => {
+  loader(false);
+  notFound(datas);
   const parent = document.getElementById("parent");
   parent.innerHTML = "";
   datas.forEach((data) => {
