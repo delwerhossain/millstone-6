@@ -1,7 +1,7 @@
 const loadData = () => {
   fetch(`https://api.kanye.rest`)
-    .then((res) => res.json())
-    .then((data) => displayData(data));
+  .then((res) => res.json())
+  .then((data) => displayData(data));
 };
 
 const displayData = (data) => {
@@ -13,5 +13,6 @@ const displayData = (data) => {
   h1.innerText = quote;
   container.appendChild(h1);
 };
+
 
 loadData();
