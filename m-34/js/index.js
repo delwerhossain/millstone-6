@@ -22,13 +22,9 @@ mainProsscer();
 
 const notFound = () => {
   document.getElementById('not-found').classList.remove('hidden');
-  // console.log(datas);
-  // if (datas) {
-  //   document.getElementById('not-found').classList.add('hidden');
-  // }
-  // else {
-  //   document.getElementById('not-found').classList.remove('hidden');
-  // }  
+}
+const oFound = () => {
+  document.getElementById('not-found').classList.add('hidden');
 }
 
 
@@ -49,8 +45,10 @@ const getData = (datas) => {
   list.innerHTML = "";
   // console.log(datas);
   if (datas) {
+    // notFound(false);
+    oFound();
     datas.forEach((data) => {
-      // notFound(data);
+      // notFound(data);df
       const { idMeal, strMeal, strMealThumb, strInstructions } = data;
       const div = document.createElement("div");
       div.innerHTML = `
