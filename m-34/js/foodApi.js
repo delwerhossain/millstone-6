@@ -22,12 +22,12 @@ mainProsscer();
 
 const notFound = (data) => {
 
-  // console.log(data.length);
-  if (data.length == 9) {
-    document.getElementById('not-found').classList.add('hidden');
+  // console.log(data);
+  if (data.length == 0  || data.length < 0 ||  data == null) {
+    document.getElementById('not-found').classList.remove('hidden');
   }
   else {
-    document.getElementById('not-found').classList.remove('hidden');
+    document.getElementById('not-found').classList.add('hidden');
   }  
 }
 
