@@ -20,53 +20,64 @@ const mainProsscer = async(search) => {
 mainProsscer();
 
 
-const notFound = (data) => {
-
-  // console.log(data);
-  if (data.length == 0  || data.length < 0 ||  data == null) {
-    document.getElementById('not-found').classList.remove('hidden');
-  }
-  else {
-    document.getElementById('not-found').classList.add('hidden');
-  }  
+const notFound = () => {
+  document.getElementById('not-found').classList.remove('hidden');
+  // console.log(datas);
+  // if (datas) {
+  //   document.getElementById('not-found').classList.add('hidden');
+  // }
+  // else {
+  //   document.getElementById('not-found').classList.remove('hidden');
+  // }  
 }
 
 
 // search function
-document.getElementById("loader").addEventListener("keyup", () => {
-  const search = document.getElementById("loader").value;
+document.getElementById("input-loader").addEventListener("keyup", () => {
+  // ocumednt.getElementById("input-loader").value.innerText = "";
+  const search = document.getElementById("input-loader").value;
 
   mainProsscer(search);
+
 });
 
 const getData = (datas) => {
   // console.log(datas);
-  notFound(datas);
+
 
   const parent = document.getElementById("list");
   list.innerHTML = "";
-  datas.forEach((data) => {
-    const { idMeal, strMeal, strMealThumb, strInstructions } = data;
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <div class="card w-96 bg-base-100 shadow-2xl">
-      <figure><img src="${strMealThumb}" alt="Shoes" /></figure>
-      <div class="card-body">
-      <h2 class="card-title">
-      ${strMeal}
-      <div class="badge badge-secondary">NEW</div>
-      </h2>
-      <p>${strInstructions.slice(0, 128)}....</p>
-      <label onClick="modalView(${idMeal})"  for="my-modal-4" class="btn" >Details</label>
-      <div class="card-actions justify-end">
+  // console.log(datas);
+  if (datas) {
+    datas.forEach((data) => {
+      // notFound(data);
+      const { idMeal, strMeal, strMealThumb, strInstructions } = data;
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <div class="card w-96 bg-base-100 shadow-2xl">
+        <figure><img src="${strMealThumb}" alt="Shoes" /></figure>
+        <div class="card-body">
+        <h2 class="card-title">
+        ${strMeal}
+        <div class="badge badge-secondary">NEW</div>
+        </h2>
+        <p>${strInstructions.slice(0, 128)}....</p>
+        <label onClick="modalView(${idMeal})"  for="my-modal-4" class="btn" >Details</label>
+        <div class="card-actions justify-end">
+  
+        <div class="badge badge-outline">Fashion</div> 
+        
+        </div>
+        </div>
+        </div>`;
+      parent.appendChild(div);
+    });
+  }
+  else {
+    notFound();
 
-      <div class="badge badge-outline">Fashion</div> 
-      
-      </div>
-      </div>
-      </div>`;
-    parent.appendChild(div);
-  });
+  }
+
 };
 
 const modalView = (idMeal) => {
