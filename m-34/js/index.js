@@ -44,14 +44,16 @@ const getData = (datas) => {
   const parent = document.getElementById("list");
   list.innerHTML = "";
   // console.log(datas);
-  if (datas) {
-    // notFound(false);
-    oFound();
-    datas.forEach((data) => {
-      // notFound(data);df
-      const { idMeal, strMeal, strMealThumb, strInstructions } = data;
-      const div = document.createElement("div");
-      div.innerHTML = `
+  if ((datas) && (datas.length > 0) && (Array.isArray(datas))) 
+    {
+
+      // notFound(false);
+      oFound();
+      datas.forEach((data) => {
+        // notFound(data);df
+        const { idMeal, strMeal, strMealThumb, strInstructions } = data;
+        const div = document.createElement("div");
+        div.innerHTML = `
         <div class="card w-96 bg-base-100 shadow-2xl">
         <figure><img src="${strMealThumb}" alt="Shoes" /></figure>
         <div class="card-body">
@@ -68,13 +70,14 @@ const getData = (datas) => {
         </div>
         </div>
         </div>`;
-      parent.appendChild(div);
-    });
-  }
+        parent.appendChild(div);
+      });
+    }
   else {
     notFound();
 
   }
+
 
 };
 
