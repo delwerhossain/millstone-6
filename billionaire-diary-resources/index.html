@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+              },
+            },
+          },
+          fontFamily: {
+            body: [
+              "Montserrat",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "system-ui",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "Noto Sans",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol",
+              "Noto Color Emoji",
+            ],
+            sans: [
+              "Montserrat",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "system-ui",
+              "Segoe UI",
+              "Roboto",
+              "Helvetica Neue",
+              "Arial",
+              "Noto Sans",
+              "sans-serif",
+              "Apple Color Emoji",
+              "Segoe UI Emoji",
+              "Segoe UI Symbol",
+              "Noto Color Emoji",
+            ],
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white dark:bg-gray-900">
+    <header>
+      <nav
+        class="mx-4 my-4 border dark:border-gray-600 rounded-lg py-2 text-center flex justify-between"
+      >
+        <button
+          id="theme-toggle"
+          type="button"
+          class="border-2 border-gray-300 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mx-4"
+        >
+          <svg
+            id="theme-toggle-dark-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            ></path>
+          </svg>
+          <svg
+            id="theme-toggle-light-icon"
+            class="hidden w-5 h-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+
+        
+<img class="rounded w-1/6 h-16" src="./images/logo/logo1.svg" alt="image description">
+
+      </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+
+    <!-- Breadcrumb -->
+
+    <!--------------------------------------
+       customization part start here  
+    --------------------------------------->
+
+    <section class="container border-gray-200 dark:border-gray-700 mx-auto">
+      <!-- <div class="grid grid-cols-3 lg:grid-cols-4 gap-2 "> -->
+      <div class="grid grid-cols-3 lg:grid-cols-4 gap-2">
+        <!-- menu -->
+        <!-- <div class="border  col-span-1  lg:col-span-1 text-center bg-slate-700 dark:bg-slate-900"> -->
+        <div
+          class="border dark:border-slate-500 border-slate-900  row-span-3 rounded-lg text-center bg-slate-700 dark:bg-slate-900"
+        >
+          <div class="  flex flex-col lg:mx-12 gap-4 my-4 mx-2 lg:mx-0">
+            <!-- <h1 class="text-2xl font-bold text-slate-100 dark:text-slate-300">BILLIONAIRE
+              <span class="block">D A I R Y</span></h1> -->
+             
+<img  src="./images/logo/logo.svg" alt="image description">
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Add a user
+              <span class="text-xs font-semibold block">(Randomly)</span>
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Double Money
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Sort By Rank
+              <span class="text-xs font-semibold block">(Decending)</span>
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Calculate Entire Wealth
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Show All Brillionaires
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+              Richest by Industey
+              <span class="text-xs font-semibold block">(Technology)</span>
+            </button>
+            <button
+              type="button"
+              class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            >
+            Richest by States
+              <span class="text-xs font-semibold block">(Texas)</span>
+            </button>
+          </div>
+        </div>
+        <!-- <div class="border  col-span-2 lg:col-span-3"> -->
+        <!-- <div class="grid col-span-2 "> -->
+
+        <div class="row-span-1 col-span-2 lg:col-span-3 mx-2 my-2">
+          
+          <div class="flex items-center">
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="relative w-full">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="simple-search"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <span class="sr-only">Search</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="bg-slate-300 rounded-lg dark:bg-slate-500 row-span-3 col-span-2 lg:col-span-3"
+        ></div>
+        <!-- </div> -->
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!--------------------------------------
+       customization part ends here  
+    --------------------------------------->
+
+    <!-- footer  -->
+    <footer class="bg-gray-50 dark:bg-gray-800"></footer>
+
+    <!--------------------- 
+       flowframe  part 
+    ----------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="./js/darkMode.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/api.js"></script>
+    <!--------------------- 
+      flowframe  part ends   
+    ----------------------->
+  </body>
+</html>
